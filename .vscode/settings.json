@@ -1,0 +1,67 @@
+{
+
+    // настройки для TODO-Tree
+    "todo-tree.general.showActivityBarBadge": true,
+    "todo-tree.general.statusBar": "total",
+    "editor.fontSize": 11,
+    "jupyter.askForKernelRestart": false,
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]",
+        "WTF",
+        "NOTE"
+    ],
+    "todo-tree.highlights.useColourScheme": true,
+    "todo-tree.highlights.backgroundColourScheme": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "indigo",
+        "violet",
+    ],
+    "todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
+
+    // TODO - вообще бы хорошо сделать посветку в зависимости от темы VSCode, чтоб оно было адаптивное
+    // но там надо сохранять общую цветовую палитру, например, TODO долджен оставаться зеленым, но с разыми оттенками 
+    // и яркостью
+    "todo-tree.highlights.customHighlight": {
+        "WTF": {
+            "icon": "question",
+            "type": "tag",
+            "iconColour": "yellow",
+            "background": "yellow",
+            "foreground": "editor.foreground"
+            
+        },
+        "NOTE": {
+            "icon": "note",
+            "type": "tag",
+            "iconColour": "purple",
+            "background": "violet",
+            "foreground": "editor.foreground"
+        },
+    },
+    "files.autoGuessEncoding": true,
+    
+    // стандартный: "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)",
+    // к нему был добавлен "::|" для распознавания комментариев в batch-файлах + пробелы вокруг него, чтоб не было ложных распознаваний
+    // на всякий. Можно дополнить, максимуму - сломается подсветка todo-tree, что в целом не критично
+
+    "todo-tree.regex.regex": "(((\n| )::( )+)|//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)",
+
+
+    // Настройки для CMake
+
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.generator": "Ninja",
+    "cmake.configureOnEdit": false,
+
+
+}
